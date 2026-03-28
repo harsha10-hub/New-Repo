@@ -1,0 +1,202 @@
+##Codes
+
+
+read chr
+if [ "$chr" == "y" -o "$chr" == "Y"  ]
+then
+    **echo "YES"**
+
+elif [ "$chr" == "n"  -o "$chr" == "N" ]
+then
+    **echo "NO"**
+
+fi
+---
+read a
+read b
+read c
+
+if (( a == b )) && (( b == c ))
+then
+    **echo "EQUILATERAL"**
+
+elif (( a == b )) || (( b == c )) || (( a == c ))
+then
+    **echo "ISOSCELES"**
+
+else
+    **echo "SCALENE"**
+
+fi
+
+
+---
+
+LINUX AND SHELL SCRIPTING
+PYTHON -->CODE FOR A DAY
+SQL
+AZURE CLOUD
+GOOGLE CLOUD
+SERVICENOW
+TRYHACKME
+NETWORKING
+
+
+
+NOV
+DEC
+JAN
+FEB
+MAR
+APR
+MAY
+JUN
+
+---
+
+
+
+
+
+read -p "which server u wanh to ping ?" server_address
+
+ping -c3 -w5 $server_address  ##3 pings and wait 5 seconds and exit
+
+---
+connect to any vm/remote machine through bash
+
+
+read -p "Enter the user name: " username
+read -p "enter the IP address: " IP
+
+(or)
+
+username=$1
+Ip=$2
+ssh $username@$IP
+---
+read -p "n1:" n1
+read -p "n2:" n2
+
+n1=5
+n2=7
+##increment
+
+echo $((++n1)) -->o/p=6
+echo $((n1++)) -->o/p=5
+echo $n1 -->o/p=6
+ 
+#decrement
+
+echo $((--n2)) -->o/p=6
+echo $((n2--)) -->o/p=7
+echo $n2 -->o/p=6
+----------------------------------------------------------
+
+Hackers Ranks Codes
+
+Not Clarity
+
+read x
+
+awk "BEGIN { printf \"%.3f\n\", $x }"
+
+Explain:: awk is a text-processing and data-manipulation tool that can also perform arithmetic.
+
+Let’s break this line down:
+
+awk "..."
+
+You are telling Bash to run the awk program and pass the script inside the quotes.
+
+BEGIN { ... }
+
+The BEGIN block runs before awk processes any input.
+So this code runs immediately when awk starts — it doesn’t read files or standard input.
+
+-----
+Without BEGIN
+
+If you ran this:
+
+awk '{ print 5+50*3/20+(19*2)/7 }'
+
+
+Then awk would wait for input lines (from a file or from you typing).
+For every line of input, it would print that calculation again.
+
+For example:
+
+echo "something" | awk '{ print 5+50*3/20+(19*2)/7 }'
+
+
+Would print 17.9286 once — because there was one line of input.
+
+But if you give multiple lines:
+
+printf "a\nb\n" | awk '{ print 5+50*3/20+(19*2)/7 }'
+
+
+It would print the result twice — once per line.
+
+🧮 Example 2 — With BEGIN
+
+Now, if you use:
+
+awk 'BEGIN { print 5+50*3/20+(19*2)/7 }'
+
+
+awk does not wait for any input at all.
+It runs the block once, immediately, and exits.
+
+So this form is perfect when you’re doing:
+
+One-time calculations,
+
+Formatting output,
+
+Initializing variables, etc.
+
+
+| Keyword      | When it Runs                        | Purpose                                |
+| ------------ | ----------------------------------- | -------------------------------------- |
+| `BEGIN`      | Before reading any input lines      | Initialize or run code once            |
+| (no `BEGIN`) | Once per line of input              | Process each line of a file or stdin   |
+| `END`        | After all input lines are processed | Do cleanup, summaries, or final output |
+	
+---------------------------------------
+
+ 
+read num
+sum=0
+for (( i=1; i<=num; i++ ))
+do
+  read x
+  sum=$((sum + x))
+done
+
+avg=$(echo "scale=3; $sum / $num" | bc -l)
+printf "%.3f\n" "$avg"
+
+(or)
+
+printf "%.3f" $(echo "$sum/$num" | bc -l)
+-----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
